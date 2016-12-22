@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,106 +13,51 @@
         android:id="@+id/imgTicTacToe"
         android:layout_gravity="center"
         android:paddingTop="10dp"
-        android:contentDescription="@string/app_name"
-        android:layout_weight="0.09" />
-
-    <RelativeLayout
-        android:layout_width="347dp"
-        android:layout_height="261dp"
-        android:gravity="center">
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/btn2"
-            android:layout_alignParentTop="true"
-            android:textSize="50sp"
-            android:layout_toEndOf="@+id/btn1"
-            android:gravity="center_vertical|center_horizontal|center" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn3"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/btn2"
-            android:gravity="center_vertical|center_horizontal|center" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn5"
-            android:layout_below="@+id/btn2"
-            android:layout_toEndOf="@+id/btn1"
-            android:gravity="center_vertical|center_horizontal|center" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn6"
-            android:layout_below="@+id/btn3"
-            android:layout_toEndOf="@+id/btn5"
-            android:gravity="center_vertical|center_horizontal|center" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn4"
-            android:layout_alignBaseline="@+id/btn5"
-            android:layout_alignBottom="@+id/btn5"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="42dp"
-            android:gravity="center_vertical|center_horizontal|center" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn1"
-            android:layout_above="@+id/btn4"
-            android:layout_alignStart="@+id/btn4"
-            android:gravity="center_vertical|center_horizontal|center" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn7"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:layout_below="@+id/btn5"
-            android:layout_alignStart="@+id/btn4" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn8"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:layout_below="@+id/btn5"
-            android:layout_toEndOf="@+id/btn4" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
-            android:id="@+id/btn9"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:layout_below="@+id/btn4"
-            android:layout_toEndOf="@+id/btn8" />
-
-    </RelativeLayout>
+        android:contentDescription="@string/app_name" />
 
     <TextView
-        android:text="É a sua vez"
+
+        android:text="Nome do jogador 1:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/vez"
-        android:layout_weight="0.09"
+        android:id="@+id/textJogador1"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:textSize="25sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editJogador1"
+        android:gravity="center_vertical|center" />
+
+    <TextView
+        android:text="Nome do jogador 2:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textJogador2"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textSize="25sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editJogador2"
+        android:gravity="center_vertical|center" />
+
+    <Button
+        android:text="Jogar"
+        android:layout_width="171dp"
+        android:layout_height="62dp"
+        android:id="@+id/btnJogar"
         android:textSize="30sp"
-        android:gravity="center" />
+        android:layout_gravity="center"
+        android:background="@android:color/black"
+        android:textColor="@android:color/background_light" />
 
 </LinearLayout>
