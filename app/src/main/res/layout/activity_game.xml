@@ -18,9 +18,10 @@
         android:layout_weight="0.09" />
 
     <RelativeLayout
-        android:layout_width="347dp"
-        android:layout_height="261dp"
-        android:gravity="center">
+        android:layout_width="379dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.10">
 
         <Button
             android:layout_width="100dp"
@@ -73,8 +74,8 @@
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:textSize="50sp"
-            android:id="@+id/btn1"
-            android:layout_above="@+id/btn4"
+            android:id="@+id/btn7"
+            android:layout_below="@+id/btn5"
             android:layout_alignStart="@+id/btn4"
             android:gravity="center_vertical|center_horizontal|center" />
 
@@ -82,33 +83,33 @@
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:textSize="50sp"
-            android:id="@+id/btn7"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:layout_below="@+id/btn5"
-            android:layout_alignStart="@+id/btn4" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:textSize="50sp"
             android:id="@+id/btn8"
-            android:gravity="center_vertical|center_horizontal|center"
             android:layout_below="@+id/btn5"
-            android:layout_toEndOf="@+id/btn4" />
+            android:layout_toEndOf="@+id/btn4"
+            android:gravity="center_vertical|center_horizontal|center" />
 
         <Button
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:textSize="50sp"
             android:id="@+id/btn9"
-            android:gravity="center_vertical|center_horizontal|center"
             android:layout_below="@+id/btn4"
-            android:layout_toEndOf="@+id/btn8" />
+            android:layout_toEndOf="@+id/btn8"
+            android:gravity="center_vertical|center_horizontal|center" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:textSize="50sp"
+            android:id="@+id/btn1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:layout_above="@+id/btn4"
+            android:layout_alignStart="@+id/btn4" />
 
     </RelativeLayout>
 
     <TextView
-        android:text="Player1, é a sua vez!"
+        android:text="@string/vez"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/viewVez"
