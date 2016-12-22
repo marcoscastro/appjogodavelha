@@ -12,11 +12,9 @@
         app:srcCompat="@mipmap/ic_tictactoe"
         android:id="@+id/imgTicTacToe"
         android:layout_gravity="center"
-        android:paddingTop="10dp"
         android:contentDescription="@string/app_name" />
 
     <TextView
-
         android:text="Nome do jogador 1:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

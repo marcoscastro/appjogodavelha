@@ -13,9 +13,8 @@
         app:srcCompat="@mipmap/ic_tictactoe"
         android:id="@+id/imgTicTacToe"
         android:layout_gravity="center"
-        android:paddingTop="10dp"
-        android:contentDescription="@string/app_name"
-        android:layout_weight="0.09" />
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/app_name" />
 
     <RelativeLayout
         android:layout_width="379dp"
