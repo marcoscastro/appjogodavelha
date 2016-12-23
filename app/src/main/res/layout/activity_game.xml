@@ -85,7 +85,7 @@
             android:layout_below="@+id/btn5"
             android:layout_alignStart="@+id/btn4"
             android:gravity="center_vertical|center_horizontal|center"
-            android:onClick="btn5"/>
+            android:onClick="btn7"/>
 
         <Button
             android:layout_width="100dp"
