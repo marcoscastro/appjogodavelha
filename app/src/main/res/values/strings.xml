@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jogo Da Velha</string>
+    <string name="app_name">JogoDaVelha</string>
     <string name="vez">Fulano, é a sua vez!</string>
     <string name="jogador1">Nome do jogador 1:</string>
     <string name="jogador2">Nome do jogador 2:</string>
