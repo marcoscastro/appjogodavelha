@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@android:color/holo_blue_bright" >
+
 
     <ImageView
         android:layout_width="176dp"
@@ -12,44 +14,55 @@
         app:srcCompat="@mipmap/ic_tictactoe"
         android:id="@+id/imgTicTacToe"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/app_name" />
 
     <TextView
-        android:text="Nome do jogador 1:"
+        android:text="@string/jogador1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textJogador1"
         android:gravity="center"
         android:layout_marginTop="25dp"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editJogador1"
-        android:gravity="center_vertical|center" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:textColor="?android:attr/textColorTertiary" />
 
     <TextView
-        android:text="Nome do jogador 2:"
+        android:text="@string/jogador2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textJogador2"
         android:layout_marginTop="25dp"
         android:gravity="center"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textColor="@android:color/background_dark" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editJogador2"
-        android:gravity="center_vertical|center" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:textColor="?android:attr/textColorTertiary" />
 
     <Button
-        android:text="Jogar"
+        android:text="@string/jogar"
         android:layout_width="171dp"
         android:layout_height="62dp"
         android:id="@+id/btnJogar"
