@@ -14,7 +14,7 @@ public class GameActivity extends Activity {
     private TextView textView;
     private Button my_btn;
     private String jogador1, jogador2;
-    private int vez;
+    private int vez, vencedor;
     private char[][] jogo;
 
     @Override
@@ -30,8 +30,8 @@ public class GameActivity extends Activity {
         textView = (TextView)findViewById(R.id.viewVez);
         textView.setText(jogador1 + ", é a sua vez!");
 
-        // jogador1 começa
-        vez = 1;
+        vez = 1; // jogador1 começa
+        vencedor = -1; // por enquanto não há vencedor
 
         jogo = new char[3][3];
 
@@ -41,6 +41,101 @@ public class GameActivity extends Activity {
                 jogo[i][j] = '-';
             }
         }
+    }
+
+    public int verificarCampeao() {
+
+        // verificando jogo do jogador 1 nas linhas
+        if(jogo[0][0] == 'X' && jogo[0][1] == 'X' && jogo[0][2] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+        if(jogo[1][0] == 'X' && jogo[1][1] == 'X' && jogo[1][2] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+        if(jogo[2][0] == 'X' && jogo[2][1] == 'X' && jogo[2][2] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+
+        // verificando jogo do jogador 1 nas colunas
+        if(jogo[0][0] == 'X' && jogo[1][0] == 'X' && jogo[2][0] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+        if(jogo[0][1] == 'X' && jogo[1][1] == 'X' && jogo[2][1] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+        if(jogo[0][2] == 'X' && jogo[1][2] == 'X' && jogo[2][2] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+
+        // verificando jogo do jogador 1 nas diagonais
+        if(jogo[0][0] == 'X' && jogo[1][1] == 'X' && jogo[2][2] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+        if(jogo[0][2] == 'X' && jogo[1][1] == 'X' && jogo[2][0] == 'X') {
+            vencedor = 1;
+            return vencedor;
+        }
+
+        // verificando jogo do jogador 2 nas linhas
+        if(jogo[0][0] == 'O' && jogo[0][1] == 'O' && jogo[0][2] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+        if(jogo[1][0] == 'O' && jogo[1][1] == 'O' && jogo[1][2] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+        if(jogo[2][0] == 'O' && jogo[2][1] == 'O' && jogo[2][2] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+
+        // verificando jogo do jogador 2 nas colunas
+        if(jogo[0][0] == 'O' && jogo[1][0] == 'O' && jogo[2][0] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+        if(jogo[0][1] == 'O' && jogo[1][1] == 'O' && jogo[2][1] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+        if(jogo[0][2] == 'O' && jogo[1][2] == 'O' && jogo[2][2] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+
+        // verificando jogo do jogador 2 nas diagonais
+        if(jogo[0][0] == 'O' && jogo[1][1] == 'O' && jogo[2][2] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+        if(jogo[0][2] == 'O' && jogo[1][1] == 'O' && jogo[2][0] == 'O') {
+            vencedor = 2;
+            return vencedor;
+        }
+
+        // verifica se houve empate
+        boolean empate = true;
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                if(jogo[i][j] == '-') {
+                    empate = false;
+                    break;
+                }
+            }
+        }
+
+        if(empate) {
+            return 0;
+        }
+        return -1;
     }
 
     public void marca(int btn) {
@@ -179,41 +274,49 @@ public class GameActivity extends Activity {
                 }
             }
         }
+
+        textView = (TextView)findViewById(R.id.viewVez);
+        if(vez == 1) {
+            textView.setText(jogador1 + ", é a sua vez!");
+        } else {
+            textView.setText(jogador2 + ", é a sua vez!");
+        }
+
     }
 
-    public void btn1() {
+    public void btn1(View v) {
         marca(1);
     }
 
-    public void btn2() {
+    public void btn2(View v) {
         marca(2);
     }
 
-    public void btn3() {
+    public void btn3(View v) {
         marca(3);
     }
 
-    public void btn4() {
+    public void btn4(View v) {
         marca(4);
     }
 
-    public void btn5() {
+    public void btn5(View v) {
         marca(5);
     }
 
-    public void btn6() {
+    public void btn6(View v) {
         marca(6);
     }
 
-    public void btn7() {
+    public void btn7(View v) {
         marca(7);
     }
 
-    public void btn8() {
+    public void btn8(View v) {
         marca(8);
     }
 
-    public void btn9() {
+    public void btn9(View v) {
         marca(9);
     }
 }
