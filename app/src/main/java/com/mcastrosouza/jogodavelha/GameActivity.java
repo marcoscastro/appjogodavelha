@@ -1,6 +1,8 @@
 package com.mcastrosouza.jogodavelha;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +33,7 @@ public class GameActivity extends Activity {
         textView.setText(jogador1 + ", é a sua vez!");
 
         vez = 1; // jogador1 começa
-        vencedor = -1; // por enquanto não há vencedor
+        vencedor = -1; // incialmente não há resultado
 
         jogo = new char[3][3];
 
@@ -47,78 +49,62 @@ public class GameActivity extends Activity {
 
         // verificando jogo do jogador 1 nas linhas
         if(jogo[0][0] == 'X' && jogo[0][1] == 'X' && jogo[0][2] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
         if(jogo[1][0] == 'X' && jogo[1][1] == 'X' && jogo[1][2] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
         if(jogo[2][0] == 'X' && jogo[2][1] == 'X' && jogo[2][2] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
 
         // verificando jogo do jogador 1 nas colunas
         if(jogo[0][0] == 'X' && jogo[1][0] == 'X' && jogo[2][0] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
         if(jogo[0][1] == 'X' && jogo[1][1] == 'X' && jogo[2][1] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
         if(jogo[0][2] == 'X' && jogo[1][2] == 'X' && jogo[2][2] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
 
         // verificando jogo do jogador 1 nas diagonais
         if(jogo[0][0] == 'X' && jogo[1][1] == 'X' && jogo[2][2] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
         if(jogo[0][2] == 'X' && jogo[1][1] == 'X' && jogo[2][0] == 'X') {
-            vencedor = 1;
-            return vencedor;
+            return 1;
         }
 
         // verificando jogo do jogador 2 nas linhas
         if(jogo[0][0] == 'O' && jogo[0][1] == 'O' && jogo[0][2] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
         if(jogo[1][0] == 'O' && jogo[1][1] == 'O' && jogo[1][2] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
         if(jogo[2][0] == 'O' && jogo[2][1] == 'O' && jogo[2][2] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
 
         // verificando jogo do jogador 2 nas colunas
         if(jogo[0][0] == 'O' && jogo[1][0] == 'O' && jogo[2][0] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
         if(jogo[0][1] == 'O' && jogo[1][1] == 'O' && jogo[2][1] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
         if(jogo[0][2] == 'O' && jogo[1][2] == 'O' && jogo[2][2] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
 
         // verificando jogo do jogador 2 nas diagonais
         if(jogo[0][0] == 'O' && jogo[1][1] == 'O' && jogo[2][2] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
         if(jogo[0][2] == 'O' && jogo[1][1] == 'O' && jogo[2][0] == 'O') {
-            vencedor = 2;
-            return vencedor;
+            return 2;
         }
 
         // verifica se houve empate
@@ -140,9 +126,15 @@ public class GameActivity extends Activity {
 
     public void marca(int btn) {
 
+        if(vencedor != -1) {
+            return;
+        }
+
+        textView = (TextView)findViewById(R.id.viewVez);
+
         if(btn == 1) {
+            my_btn = (Button)findViewById(R.id.btn1);
             if(jogo[0][0] == '-') {
-                my_btn = (Button)findViewById(R.id.btn1);
                 if(vez == 1) {
                     jogo[0][0] = 'X';
                     vez = 2;
@@ -156,8 +148,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 2) {
+            my_btn = (Button)findViewById(R.id.btn2);
             if(jogo[0][1] == '-') {
-                my_btn = (Button)findViewById(R.id.btn2);
                 if(vez == 1) {
                     jogo[0][1] = 'X';
                     vez = 2;
@@ -171,8 +163,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 3) {
+            my_btn = (Button)findViewById(R.id.btn3);
             if(jogo[0][2] == '-') {
-                my_btn = (Button)findViewById(R.id.btn3);
                 if(vez == 1) {
                     jogo[0][2] = 'X';
                     vez = 2;
@@ -186,8 +178,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 4) {
+            my_btn = (Button)findViewById(R.id.btn4);
             if(jogo[1][0] == '-') {
-                my_btn = (Button)findViewById(R.id.btn4);
                 if(vez == 1) {
                     jogo[1][0] = 'X';
                     vez = 2;
@@ -201,8 +193,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 5) {
+            my_btn = (Button)findViewById(R.id.btn5);
             if(jogo[1][1] == '-') {
-                my_btn = (Button)findViewById(R.id.btn5);
                 if(vez == 1) {
                     jogo[1][1] = 'X';
                     vez = 2;
@@ -216,8 +208,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 6) {
+            my_btn = (Button)findViewById(R.id.btn6);
             if(jogo[1][2] == '-') {
-                my_btn = (Button)findViewById(R.id.btn6);
                 if(vez == 1) {
                     jogo[1][2] = 'X';
                     vez = 2;
@@ -231,8 +223,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 7) {
+            my_btn = (Button)findViewById(R.id.btn7);
             if(jogo[2][0] == '-') {
-                my_btn = (Button)findViewById(R.id.btn7);
                 if(vez == 1) {
                     jogo[2][0] = 'X';
                     vez = 2;
@@ -246,8 +238,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 8) {
+            my_btn = (Button)findViewById(R.id.btn8);
             if(jogo[2][1] == '-') {
-                my_btn = (Button)findViewById(R.id.btn8);
                 if(vez == 1) {
                     jogo[2][1] = 'X';
                     vez = 2;
@@ -261,8 +253,8 @@ public class GameActivity extends Activity {
         }
 
         if(btn == 9) {
+            my_btn = (Button)findViewById(R.id.btn9);
             if(jogo[2][2] == '-') {
-                my_btn = (Button)findViewById(R.id.btn9);
                 if(vez == 1) {
                     jogo[2][2] = 'X';
                     vez = 2;
@@ -275,11 +267,19 @@ public class GameActivity extends Activity {
             }
         }
 
-        textView = (TextView)findViewById(R.id.viewVez);
-        if(vez == 1) {
-            textView.setText(jogador1 + ", é a sua vez!");
+        vencedor = verificarCampeao();
+        if(vencedor == 1) {
+            textView.setText(jogador1 + ", você ganhou!!");
+        } else if(vencedor == 2) {
+            textView.setText(jogador2 + ", você ganhou!!");
+        } else if(vencedor == 0) {
+            textView.setText("Empate :(");
         } else {
-            textView.setText(jogador2 + ", é a sua vez!");
+            if(vez == 1) {
+                textView.setText(jogador1 + ", é a sua vez!");
+            } else {
+                textView.setText(jogador2 + ", é a sua vez!");
+            }
         }
 
     }
@@ -318,5 +318,41 @@ public class GameActivity extends Activity {
 
     public void btn9(View v) {
         marca(9);
+    }
+
+    public void reset(View v) {
+
+        // reseta todas as variáveis
+        textView = (TextView)findViewById(R.id.viewVez);
+        textView.setText("");
+        vez = 1;
+        vencedor = -1;
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                jogo[i][j] = '-';
+            }
+        }
+        my_btn = (Button)findViewById(R.id.btn1);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn2);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn3);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn4);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn5);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn6);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn7);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn8);
+        my_btn.setText("");
+        my_btn = (Button)findViewById(R.id.btn9);
+        my_btn.setText("");
+
+        // troca de activity
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
