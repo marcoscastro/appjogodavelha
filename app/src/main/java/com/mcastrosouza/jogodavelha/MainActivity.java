@@ -34,8 +34,12 @@ public class MainActivity extends Activity {
         if(jogador2.isEmpty())
             jogador2 = "Jogador2";
 
-        // chama a outra activity
+        // criando um intent
         Intent intent = new Intent(this, GameActivity.class);
+        // passando valores para a outra activity
+        intent.putExtra("JOGADOR1", jogador1);
+        intent.putExtra("JOGADOR2", jogador2);
+        // iniciando a outra activity
         startActivity(intent);
     }
 }
